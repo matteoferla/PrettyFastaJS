@@ -26,7 +26,7 @@ if (window.attachEvent) {
     }
 }
 
-function PrettyFastaSequencer(text, seqnumber) {
+function PrettyFastaSequencer(seq, seqnumber) {
 	var munged="<span class='fastasequence'>";
     //munged+="<span class='fasta"+fasta[l][c]+"'>"+fasta[l][c]+"</span>";
     //I want to colour depending on type.
