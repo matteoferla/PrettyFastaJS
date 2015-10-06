@@ -3,8 +3,7 @@
 
 .fasta { /*Controls the whole box*/
 	padding: 10px;
-	margin: 10px;
-	line-height: 1.5em; 
+	margin: 10px; 
 	font-family: monospace; /*This is serious ichy in Windows. In the demo sheet I overide it with a Google font*/
 	font-style: normal;
 	border: 1px solid gainsboro;
@@ -14,6 +13,7 @@
 	
 .fastaheader { /*Controls the header*/
 	font-weight: bold;
+	line-height: 1.5em;
 }
 
 .fastaspecies { /*Controls whatever is in a square bracket in the header*/
