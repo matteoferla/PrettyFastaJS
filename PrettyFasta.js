@@ -27,7 +27,8 @@ if (window.attachEvent) {
     }
 }
 
-function PrettyFastaText(text) {
+function PrettyFastaText(text,seqnumber) {
+	seqnumber = seqnumber || 0;
     var munged = '';
 	var seq='';
     var fasta = text.split('\n');
@@ -121,9 +122,9 @@ function PrettyFastaText(text) {
                     console.log(seq[c] + ' is some weird unicode symbol?!');
                     translation = 'undefined';
                 }
-                munged += "<span class='fasta" + translation + "' "+FASTATOOLTIP+"='"+(c+1)+"'>" + letter + "</span>";
+                munged += "<span class='fasta" + translation + "' "+FASTATOOLTIP+"='"+(c+1)+"' id='fasta"+seqnumber+"_"+letter+(c+1)+"'>" + letter + "</span>";
             }
-            munged += "</span>";
+            munged += "</span><br/>";
         
 
     }
@@ -135,7 +136,7 @@ function PrettyFasta() {
     var fastalist = document.getElementsByClassName("fasta");
     for (var i = 0; i < fastalist.length; i++) {
         var fastain = fastalist.item(i).innerHTML;
-        var fastout = PrettyFastaText(fastain);
+        var fastout = PrettyFastaText(fastain,i+1);
         fastalist.item(i).innerHTML = fastout;
     }
 

@@ -19,6 +19,14 @@ The CSS is pretty well annotated. So if you want to change anything check that.
 Space are ignored and dots are converted to hyphens (en dashes actually, there is an issue with monospace not being monospaced).
 The font can be anything monospaced. So go Google fonts!
 
+The script calls on load `PrettyFasta()`, which sends the content of the fasta classed element to `PrettyFastaText(text_to_be_parsed,sequence_number_for_ID_tags)`. Each residue is give its own id `fasta1_A5`, counting from one for the base/residue, while the `PrettyFasta()` function numbers the sequence for the sequence (shifted by one). So if you wanted to make residue W10 red you'd add this to the CSS:
+```
+#fasta1_W10 {
+color: red;
+}
+```
+If you want a static version so you can heavily mod it, you could simply run your sequence through `PrettyFastaText()` and copy paste the code to your HTML draft and go crazy with it.
+
 ## To Do
 I have not tried if the fasta can be external as I am pretty sure href and src will not work, but I'll look into it.
 
