@@ -25,7 +25,12 @@
 
 /* The wild cards and other not residues*/
 /*Controls the spacing*/
-.fastaspace0, .fastaspace5, .fastaspace10, .fastaspace20, .fastaspace50, .fastaspace100, .fastaspace1000 {color: dimgray}
+.fastaspace0, .fastaspace5, .fastaspace10, .fastaspace20, .fastaspace50, .fastaspace100, .fastaspace1000 {color: dimgray;
+-webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none;    
+  user-select: none;         
+}
 /*don't show the following though!*/
 .fastaspace5 { display: none;}
 
