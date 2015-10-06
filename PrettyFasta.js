@@ -119,7 +119,7 @@ function PrettyFastaText(text, seqnumber) {
     for (var l = 0; l < fasta.length; l++) {
         //console.log(fasta[l]);
         if (fasta[l].search('&gt;') != -1) {
-			if (!! seq) {munged += PrettyFastaSequencer(seq, seqnumber); seq='';}
+			if (seq) {munged += PrettyFastaSequencer(seq, seqnumber); seq='';}
             fasta[l] = fasta[l].replace(/\[(.*?)\]/, "\[\<span class='fastaspecies'\>$1\<\/span\>\]")
             munged += "<span class='fastaheader'>" + fasta[l] + "</span><br/>";
         } else {
