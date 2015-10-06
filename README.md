@@ -16,12 +16,37 @@ The JavaScript `PrettyFasta.js` reads any element of the class fasta, guesses wh
 
 The CSS is pretty well annotated. So if you want to change anything check that.
 
-I have not tried if the fasta can be external as I am pretty sure href and src will not work, but I'll look into it.
 Space are ignored and dots are converted to hyphens (en dashes actually, there is an issue with monospace not being monospaced).
 The font can be anything monospaced. So go Google fonts!
 
-One issue I know is that numbering is selected which is not good. --If you know the CSS or JS trick to make them invisible to select please do let me know.
+## To Do
+I have not tried if the fasta can be external as I am pretty sure href and src will not work, but I'll look into it.
 
+
+Another thing that would be kind of cool would be having a bar at the bottom with a link to blast the sequence in NCBI and some other data (length, content and what else ??).
+
+
+## Line numbering change: SOLVED
+
+One issue I knew was that numbering was selected ws not good. In order to address the problem I asked a question on [Stack Exchange](http://stackoverflow.com/questions/32969120/how-to-prevent-part-of-html-text-from-being-copied-when-copying-adjecent).
+And the solution was pretty nifty use of the psuedoelement.
+```
+.fastaspace1000::before {
+  content: attr(block-number);
+}
+```
+This also solves the issue that adding spaces while skipping the numbers was accomplished in a tad barbaric way in the CSS:
+```
+.fastaspace5 {
+	width: 1em;
+	text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+```
+
+
+## Disclaimer
 
 Enjoy! 
  

@@ -31,8 +31,15 @@
   -ms-user-select: none;    
   user-select: none;         
 }
+
+.fastaspace0::before, .fastaspace5::before, .fastaspace10::before, .fastaspace20::before, .fastaspace50::before, .fastaspace100::before, .fastaspace1000::before {
+  content: attr(block-number);
+}
+
 /*don't show the following though!*/
 .fastaspace5 { display: none;}
+
+
 
 /* hyphen */
 .fastagap {

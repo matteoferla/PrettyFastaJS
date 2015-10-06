@@ -85,27 +85,27 @@ function PrettyFastaText(text) {
             for (var c = 0; c < seq.length; c++) {
 				var label = "" + (1+c)
 				var pad = Array(Math.floor(Math.log10(seq.length))+2).join('0');
-				var label = pad.substring(0, pad.length - label.length) + label
+				var label = " "+pad.substring(0, pad.length - label.length) + label+"&nbsp;";
 				if (c ==0) {
-					munged+="<span class='fastaspace100'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace0' block-number='"+label+"'></span>";
 				}
 				else if (c % 1000 ==0) { //What if someone wants a babylonian counting system?
-					munged+="<span class='fastaspace1000'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace1000' block-number='"+label+"'></span>";
 					}
 					else if (c % 100 ==0) {
-					munged+="<span class='fastaspace100'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace100' block-number='"+label+"'></span>";
 					}
 				else if (c % 50 ==0) {
-					munged+="<span class='fastaspace50'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace50'  block-number='"+label+"'></span>";
 					}
 				else if (c % 20 ==0) {
-					munged+="<span class='fastaspace20'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace20'  block-number='"+label+"'></span>";
 					}
 				else if (c % 10 ==0) {
-					munged+="<span class='fastaspace10'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace10' block-number='"+label+"'></span>";
 					}
 				else if (c % 5 ==0) {
-					munged+="<span class='fastaspace5'> "+label+"&nbsp;</span>";
+					munged+="<span class='fastaspace5' block-number='"+label+"'></span>";
 					}
 				
 				var token = seq[c];
