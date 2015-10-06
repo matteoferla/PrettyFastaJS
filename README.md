@@ -44,7 +44,7 @@ This also solves the issue that adding spaces while skipping the numbers was acc
     overflow: hidden;
 }
 ```
-
+Now removing the class from recieving the pseudoelement will work!
 
 ## Disclaimer
 
