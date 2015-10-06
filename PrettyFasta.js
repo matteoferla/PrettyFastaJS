@@ -26,22 +26,8 @@ if (window.attachEvent) {
     }
 }
 
-function PrettyFastaText(text, seqnumber) {
-    seqnumber = seqnumber || 0;
-    var munged = '';
-    var seq = '';
-    var fasta = text.split('\n');
-    for (var l = 0; l < fasta.length; l++) {
-        //console.log(fasta[l]);
-        if (fasta[l].search('&gt;') != -1) {
-            fasta[l] = fasta[l].replace(/\[(.*?)\]/, "\[\<span class='fastaspecies'\>$1\<\/span\>\]")
-            munged += "<span class='fastaheader'>" + fasta[l] + "</span><br/>";
-        } else {
-            seq += fasta[l].replace(/\s|\r\w/g, '');
-        }
-    }
-
-    munged += "<span class='fastasequence'>";
+function PrettyFastaSequencer(text, seqnumber) {
+	var munged="<span class='fastasequence'>";
     //munged+="<span class='fasta"+fasta[l][c]+"'>"+fasta[l][c]+"</span>";
     //I want to colour depending on type.
     //Determine type.
@@ -121,7 +107,26 @@ function PrettyFastaText(text, seqnumber) {
         }
         munged += "<span class='fasta" + translation + "' " + FASTATOOLTIP + "='" + (c + 1) + "' id='fasta" + seqnumber + "_" + letter + (c + 1) + "'>" + letter + "</span>";
     }
-    munged += "</span><br/>";
+    munged += "</span><br/><br/>";
+	return munged;
+	}
+
+function PrettyFastaText(text, seqnumber) {
+    seqnumber = seqnumber || 0;
+    var munged = '';
+    var seq = '';
+    var fasta = text.split('\n');
+    for (var l = 0; l < fasta.length; l++) {
+        //console.log(fasta[l]);
+        if (fasta[l].search('&gt;') != -1) {
+			if (!! seq) {munged += PrettyFastaSequencer(seq, seqnumber); seq='';}
+            fasta[l] = fasta[l].replace(/\[(.*?)\]/, "\[\<span class='fastaspecies'\>$1\<\/span\>\]")
+            munged += "<span class='fastaheader'>" + fasta[l] + "</span><br/>";
+        } else {
+            seq += fasta[l].replace(/\s|\r\w/g, '');
+        }
+    }
+    munged += PrettyFastaSequencer(seq, seqnumber);
     return munged;
 }
 
