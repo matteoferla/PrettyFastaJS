@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+.fasta { /*Controls the whole box*/
+	padding: 5px;
+	margin: 5px;
+	font-family: monospace;
+	font-style: normal;
+	border: 1px solid gainsboro;
+	word-wrap: break-word;
+	display: block; /*might be problematic...*/
+	}
+	
+.fastaheader { /*Controls the header*/
+	font-weight: bold;
+}
+
+.fastaspecies { /*Controls whatever is in a square bracket in the header*/
+	 font-style: italic;
+}
+
+.fastasequence { /*Controls the sequence*/
+	/*font-size: 0.83em;*/
+}
+
+/* The wild cards and other not residues*/
+/*Controls the spacing*/
+.fastaspace0, .fastaspace5, .fastaspace10, .fastaspace20, .fastaspace50, .fastaspace100, .fastaspace1000 {color: dimgray}
+/*don't show the following though!*/
+.fastaspace5 { display: none;}
+
+/* hyphen */
+.fastagap {
+	color:darkgray;
+}
+
+/*anything unknown is undefined*/
+.fastaundefined {
+	color: red;
+	animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
+
+/*nucleotides*/
+.fastaany { /*N*/
+	color:gray;
+}
+
+.fastaadenine {
+	color: #FFA714;
+}
+.fastathymine {
+	color: #CC1086;
+}
+.fastaguanine {
+	color: #AFF113;
+}
+.fastacytosine {
+	color: #1C5AB0;
+}
+
+/*Protein*/
+.fastaglycine {
+	color: #D3C047; /*mustardy*/
+}
+
+.fastaalanine {
+	color: #D3CF47; /*yellow-y*/
+}
+
+.fastaserine {
+	color: #D3A947; /*orangy*/
+}
+
+.fastaproline {
+	color: #D3AE47; /*sand*/
+}
+
+.fastathreonine {
+	color: #D36D47; /*orangy*/
+}
+
+.fastacysteine {
+	color: #B9CD45; /*vomity*/
+}
+
+
+.fastalysine {
+	color: #37A344; /*dull green*/
+}
+
+.fastaarginine {
+	color: #0A6F16; /*pine*/
+}
+
+.fastatyrosine {
+	color: #4D3D91; /*lavander*/
+}
+.fastaaspartate, .fastaasparx {
+	color: #D34E47; /*brick*/
+}
+
+.fastaglutamate, .fastaglutamz {
+	color: #8F130D; /*ferrari*/
+}
+
+.fastahistidine {
+	color: #89D793; /*aqua*/
+}
+
+.fastaphenylalanine, .fastatryptophan {
+	color: #231463; /*marine*/
+}
+
+.fastaglutamine {
+	color: #2D8775; /*teal*/
+}
+
+.fastaasparagine {
+	color: #33985C; /*bluer teal*/
+}
+
+.fastaleucine, .fastaisoleucine, .fastavaline, .fastamethionine {  /*I gave up*/
+	color: #4191C1; /*cyan*/
+	}
+
